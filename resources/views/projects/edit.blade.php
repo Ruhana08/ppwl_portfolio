@@ -1,16 +1,31 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah Project')
+@section('title', 'Edit Project')
 
 @section('content')
 
 <div class="content">
 
-    <h1>Tambah Project</h1>
+    <h1>Edit Project</h1>
 
-    <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
+    @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form
+        action="{{ route('projects.update', $project) }}"
+        method="POST"
+        enctype="multipart/form-data"
+    >
 
         @csrf
+        @method('PUT')
 
         <div class="form-group">
             <label for="title">Title</label>
@@ -19,8 +34,7 @@
                 type="text"
                 id="title"
                 name="title"
-                placeholder="Masukkan judul project"
-                value="{{ old('title') }}"
+                value="{{ old('title', $project->title) }}"
             >
 
             @error('title')
@@ -35,13 +49,11 @@
                 id="description"
                 name="description"
                 rows="4"
-                placeholder="Masukkan deskripsi singkat project"
-            >{{ old('description') }}</textarea>
+            >{{ old('description', $project->description) }}</textarea>
 
             @error('description')
                 <small class="error-message">{{ $message }}</small>
             @enderror
-            
         </div>
 
         <div class="form-group">
@@ -51,8 +63,7 @@
                 id="content"
                 name="content"
                 rows="8"
-                placeholder="Masukkan detail project"
-            >{{ old('content') }}</textarea>
+            >{{ old('content', $project->content) }}</textarea>
 
             @error('content')
                 <small class="error-message">{{ $message }}</small>
@@ -61,6 +72,7 @@
 
         <div class="form-group">
             <label for="image">Image</label>
+
             <input
                 type="file"
                 id="image"
@@ -70,7 +82,7 @@
         </div>
 
         <button type="submit" class="btn-add">
-            Simpan Project
+            Update Project
         </button>
 
     </form>

@@ -148,3 +148,69 @@
 .btn-detail:hover {
     text-decoration: underline;
 }
+
+.flash-message {
+    padding: 12px 16px;
+    margin: 20px 0;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.project-actions {
+    margin-top: 30px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-action:hover {
+    opacity: 0.8;
+}
+
+.btn-delete {
+    padding: 10px 18px;
+    border-radius: 6px;
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #ddd;
+}
+
+.error-message {
+    display: block;
+    margin-top: 6px;
+    color: #d33;
+    font-size: 13px;
+}

@@ -6,6 +6,12 @@
 
 <div class="content">
 
+    @if (session('success'))
+        <div class="flash-message">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <h1>My Projects</h1>
 
     <a href="{{ route('projects.create') }}" class="btn-add">
@@ -36,8 +42,8 @@
 
                     <p>{{ $project->description }}</p>
 
-                    <a href="{{ route('projects.show', $project) }}" class="btn-detail">
-                        Lihat Detail →
+                    <a href="{{ route('projects.show', $project) }}" class="btn-action">
+                        Lihat Detail
                     </a>
 
                 </div>
