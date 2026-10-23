@@ -5,13 +5,7 @@
 @section('content')
 
     <div class="content">
-        <h1><b>My Projects</b></h1>
-
-        <ul>
-            <li>Portfolio Website</li>
-            <li>Corta Sports Management</li>
-            <li>SI Vonic - Polling Website</li>
-        </ul>
+        <h1><b>Project</b></h1>
     </div>
 
 @endsection
