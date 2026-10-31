@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.post-layout')
 
 @section('title', 'Daftar Post')
 

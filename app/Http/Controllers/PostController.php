@@ -25,6 +25,6 @@ public function index()
         ->paginate($perPage)
         ->withQueryString();
 
-    return view('posts.index', compact('posts', 'keyword'));
+    return view('post.index', compact('posts', 'keyword'));
 }
 }
